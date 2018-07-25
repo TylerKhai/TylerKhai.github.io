@@ -14,7 +14,7 @@
  */
 function length(string) {
     // YOUR CODE BELOW HERE //
-     return string.length; 
+     return string.length;
 
 
     // YOUR CODE ABOVE HERE //
@@ -25,7 +25,7 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-    return string.toLowerCase();
+    return string.toLowerCase(); 
 
 
     // YOUR CODE ABOVE HERE //
@@ -77,10 +77,23 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
+ // get first letter of string
+ // .charAt(0) 
+ // .toLowerCase
+ // compare to the char
+ // if letters match return true
+ // else return false
+  
+ if (string[0].toLowerCase() === char.toLowerCase()){
+     return true;
+     
+ }else {
+     return false;
+ }
+ 
 
-    
 
-    // YOUR CODE ABOVE HERE //
+ // YOUR CODE ABOVE HERE //
 }
 
 /**
@@ -97,7 +110,12 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
+ if (string.charAt(string.length-1).toLowerCase() === char.toLowerCase()){
+     return true;
+     
+ }else {
+     return false;
+ }
 
 
     // YOUR CODE ABOVE HERE //
@@ -128,7 +146,9 @@ return stringOne.concat(stringTwo);
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    
+      var args = Array.from(arguments);
+     return args.join('');
+     
     // YOUR CODE ABOVE HERE //
 }
 
@@ -143,8 +163,12 @@ function join(stringOne, stringTwo) {
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
-
+    if (stringOne.length > stringTwo.length){
+        return stringOne;
+    } else {
+        return stringTwo;
+    }
+    
 
     // YOUR CODE ABOVE HERE //
 }
@@ -158,7 +182,13 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+        if(stringOne > stringTwo){
+            return -1;
+        } else if(stringTwo > stringOne){
+            return 1;
+        } else {
+            return 0;
+        }
 
 
     // YOUR CODE ABOVE HERE //
@@ -174,7 +204,13 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-
+    if (stringOne > stringTwo) {
+       return 1;
+   } else if (stringTwo > stringOne) {
+       return -1;
+   } else {
+       return 0;
+   }
 
 
 
@@ -195,6 +231,6 @@ if((typeof process !== 'undefined') &&
     module.exports.concat = concat;
     module.exports.join = join;
     module.exports.longest = longest;
-    module.exports.sortAscending = sortAscending
+    module.exports.sortAscending = sortAscending;
     module.exports.sortDescending = sortDescending;
 }

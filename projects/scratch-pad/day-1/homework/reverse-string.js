@@ -21,6 +21,13 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
+    var splitInput = input.split("");
+    // ["h","e","l","l","o"]
+    var revArr = splitInput.reverse();
+    // ["o","l","l","e","h"]
+    var joinArr = revArr.join("");
+    // "olleh"
+    return joinArr;
     
     
     

@@ -23,7 +23,28 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
+    //create an array to hold all integers
+   var arr = [];
+   //if start is less than end
+   if (start < end) {
+       //for loop starting with start; ending with end; positive increment
+       for (var i = start; i <= end; i++) {
+        //push
+        arr.push(i);
+       }
+       return arr;
+   }
+   //if start is greater than end
+  if (start > end) {
+      //for loop starting with end; stopping with start; positive increment
+      for (var i = end; i <= start; i++) {
+          //push
+          arr.push(i);
+      }
+      //return in reverse
+      return arr.reverse();
+  }
+        
     
     
     

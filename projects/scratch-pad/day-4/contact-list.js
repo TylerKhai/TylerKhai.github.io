@@ -13,13 +13,13 @@
  *  b. Create a factory Function called makeContactList that returns an Object 
  *     that manages contacts. The contact-list object should have the following API:
  *       
- *      1. length(): returns the number of contacts within the list.
- *      2. addContact(contact): takes a contact object to be added to the 
+ * DONE 1. length(): returns the number of contacts within the list.
+ * DONE 2. addContact(contact): takes a contact object to be added to the 
  *         contact-list.
- *      3. findContact(fullName): takes a full-name String, like 'Max Gaudin', and 
+ * DONE 3. findContact(fullName): takes a full-name String, like 'Max Gaudin', and 
  *         returns the contact object if found in the contacts-list, or, 
  *         undefined if the fullName does not match any contacts in the list.
- *      4. removeContact(contact): takes a contact object to be removed from 
+ * DONE 4. removeContact(contact): takes a contact object to be removed from 
  *         the contact-list.
  * 
  * BONUS : add a printAllContactNames() Function to your makeContactList() factory, so that the 
@@ -37,7 +37,12 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+    var contact = {
+        id : id,
+        nameFirst : nameFirst,
+        nameLast : nameLast
+    };
+    return contact;
 } 
 
 
@@ -45,15 +50,45 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
+        }, 
+        addContact: function(contact){
+            return contacts.push(contact);
+        }, 
+        findContact: function(fullName){
+            for(var i = 0; i < contacts.length; i++){
+                if(fullName === contacts[i]["nameFirst"] + " " + contacts [i]["nameLast"]){
+                    return contacts[i];
+                } 
+        
+                }
+            },
+         removeContact: function(contact){
+            return contacts.splice(contacts, 1);
+        },
+        printAllContactNames: function(){
+           //array to strore full names
+           var list = [];
+           //string array for the multi line list
+           var result;
+           for(var j = 0; j < contacts.length; j++){
+               
+               list[j] = contacts[j].nameFirst + " " + contacts[j].nameLast;//assign names to list incrementally
+               result = list.join("\n");//join with new line character to make a list
+               
+           }
+           return result;//get list of names back
+       }
+            
+        };
+        
     }
-}
+
 
 
 

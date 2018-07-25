@@ -11,13 +11,21 @@
  * return a Function that tests whether a given value is greater than the 
  * base.
  */
+   // YOUR CODE BELOW HERE//
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //test if base is a string or a number
+    if (typeof base === "string" || typeof base === "number"){
+        return function (value) {
+            if (value > base){
+            return true;
+        }else{    
+            return false;
+        }
+    };
+    }
     // YOUR CODE ABOVE HERE //
+
 }
 
 /** 
@@ -28,7 +36,15 @@ function createGreaterThanFilter(base) {
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-    
+    if(typeof base === "string" || typeof base === "number"){
+        return function (value){
+            if (value < base){
+                return true;
+            }else{
+                return false;
+            }
+        };
+    }
     
     
     // YOUR CODE ABOVE HERE //
@@ -41,7 +57,13 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+        return function (string){
+            if (string.charAt(0).toLowerCase() === startsWith.toLowerCase()){
+                return true;
+            }else  {
+                return false;
+            }
+        };
     
     
     
@@ -55,14 +77,20 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+        return function (string){
+            if (string.charAt(string.length-1).toLowerCase() === endsWith.toLowerCase()){
+                return true;
+            }else {
+                return false;
+            }
+        };
     
     
     
     // YOUR CODE ABOVE HERE //
 }
 
-/** 
+/* 
  * Given an Array of Strings and a Function designed to modify a String, 
  * return an Array of the Strings, modified.
  * 
@@ -71,10 +99,15 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+        var newArray = [];
+  
+  for(var i = 0; i < strings.length; i++){
+      newArray[i] = modify(strings[i]);
+  }
+  return newArray;
+        
+        
+        
     // YOUR CODE ABOVE HERE //
 }
 
@@ -90,7 +123,13 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     
-    
+    for(var i = 0; i < strings.length; i++){
+   //pass to the test
+       if (!test(strings[i])) {
+           return false;
+       }
+   }      
+           return true;
     
     
     // YOUR CODE ABOVE HERE //
