@@ -15,6 +15,11 @@
 
     string.slice()
         extracts a part of a string and returns the extracted part in a new string.
+       
+        var str = "Hello world!";
+        var res = str.slice(1, 5);
+       // will return "ello"
+       The first character has the position 1, the second has position 5, 
         
     string.replace()
         replaces a specified value with another value in a string:
@@ -26,10 +31,11 @@
                 
     string.toUpperCase()
         converted to upper case
+            we would use this when we want our string to be in uppercase.
             
             Ex:
                 var text1 = "Hello World!";       // String
-                var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+                var text2 = text1.toUpperCase();  // text2 is text1 converted to upper ("HELLO WORLD").
                 
     string.concat()
         joins two or more strings.
@@ -37,14 +43,14 @@
             Ex:
                 var text1 = "Hello";
                 var text2 = "World";
-                var text3 = text1.concat(" ", text2);
+                var text3 = text1.concat(" ", text2); //joins both text1 and text2 ("Hello World").
                 
     string.charAt()
         returns the character at a specified index (position) in a string
         
             Ex:
                 var str = "HELLO WORLD";
-                str.charAt(0); // returns H
+                str.charAt(0); // returns H <=(this returned the character at index position 0)
                 
                 
     string.split()

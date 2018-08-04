@@ -26,6 +26,7 @@ noises['skreetch'];
 noises.push("whimpers");
 noises.unshift("purs");
 noises[noises.length]= "jibberish";
+noises.push("sobs");
 
 console.log(noises.length);
 console.log(noises[3]);
@@ -36,8 +37,7 @@ console.log(noises);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 animal['noises']=noises;
-noises.push('yawns');
-
+noises.push("yawns");
 console.log(animal);
 
 
@@ -78,14 +78,14 @@ console.log(animals);
 var dog = {
     species: "dog",
     name: 'Honey',
-    noises: ['bark', "whines",]
+    noises: ['bark', "whines", "snores"]
 };
 animals.push(dog);
 
 var wookie = {
     species: 'wookie',
     name: 'Greg',
-    noises: ['loud screams', 'soft screams']
+    noises: ['loud screams', 'soft screams', "hight pitch screams"]
 };
 animals.push(wookie);
 console.log(animals);

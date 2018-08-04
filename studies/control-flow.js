@@ -127,3 +127,10 @@ switch (expr) {
 }
 
 console.log("Is there anything else you'd like?");
+
+
+// NOTE:
+/** Although both IF and SWITCH are conditional statements,they do differ.
+ * such as IF statements will check multiple statements at one time
+ * and switch statements will only check a single condition at a time.
+ */ 

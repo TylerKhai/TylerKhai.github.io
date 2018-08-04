@@ -50,10 +50,16 @@ function remove(animals, name){
 // Step 4 - Create ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 function add(animals, animal){
-   var search
+   
+   var finder = search(animals, animal.name);
+   
+   
+   if(finder === null && animal.name.length > 0 && animal.species.length > 0){
+       
+       animals.push(animal);
+       return animals;
+   }
 }
-
-
 /**
  * You did it! You're all done with Matchy!
  */
